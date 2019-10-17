@@ -1,0 +1,12 @@
+// Import our variables to override Bootstraps default ones
+// @import './variables';
+@import './variables';
+
+// Bootstrap Core
+// --------------------------------------------------
+@import '../../../node_modules/bootstrap/scss/bootstrap';
+
+// Theme
+// --------------------------------------------------
+@import './mixins';
+@import './theme';
