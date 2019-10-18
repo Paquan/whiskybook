@@ -1,14 +1,16 @@
-var dashboardData = require('./dashboard.json');
-var users = require('./users.json');
+const dashboardData = require('./dashboard.json');
+const users = require('./users.json');
 
 export function configureFakeBackend() {
-  console.log('configureFakeBackend ...');
-  console.log('process.env.RUN_WITH_FAKE_BACKEND', process.env.RUN_WITH_FAKE_BACKEND);
+  console.log(
+    'process.env.RUN_WITH_FAKE_BACKEND',
+    process.env.RUN_WITH_FAKE_BACKEND
+  );
   if (process.env.RUN_WITH_FAKE_BACKEND === 'false') {
     return;
   }
   let realFetch = window.fetch;
-  window.fetch = function (url, opts) {
+  window.fetch = function(url, opts) {
     return new Promise((resolve, reject) => {
       if (url.endsWith('/api/auth/login') && opts.method === 'POST') {
         doFakeLogin();
