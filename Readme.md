@@ -1,20 +1,19 @@
-# How does my whisky taste?
+# whiskybook
 
-TODO Andy, your text !
+An app to manage the documentation of your whisky tastings
 
-## Introduction 
-Things you need on your computer:
-- node 8
-- Git
-- Web browser
-- parcel 
-    ```
-        npm install -g parcel
-    ```
+## Getting Started
 
-## How to start ?
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
+
+You will need the following tool installed an setted up on your computer
+- Node.js 8
+- git
+- ssh
+
+
 ```
-    git clone https://github.com/Paquan/whiskybook.git
+    git clone git@github.com:Paquan/whiskybook.git
     cd whiskybook
 
     npm install
@@ -22,9 +21,17 @@ Things you need on your computer:
 ```
 
 Start your browser at: http://localhost:1234
-  
+
 ## Fake-Backend
 
 If you want to work with real backend, please set the file .env.local:
 RUN_WITH_FAKE_BACKEND=false
 
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
