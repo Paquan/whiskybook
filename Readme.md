@@ -9,7 +9,7 @@ Things you need on your computer:
 - Web browser
 - parcel 
     ```
-        npm -g install parcel
+        npm install -g parcel
     ```
 
 ## How to start ?
