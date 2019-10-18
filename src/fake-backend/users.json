@@ -5,10 +5,7 @@
     "password": "admin",
     "firstName": "Admin",
     "lastName": "Ardbeg",
-    "roles": [
-      "ROLE_ADMIN",
-      "ROLE_USER"
-    ],
+    "roles": ["ROLE_ADMIN", "ROLE_USER"],
     "authorities": [
       "READ_PROFILE",
       "WRITE_PROFILE",
@@ -22,13 +19,7 @@
     "password": "user",
     "firstName": "Old",
     "lastName": "Lagavulin",
-    "roles": [
-      "ROLE_USER"
-    ],
-    "authorities": [
-      "READ_PROFILE",
-      "WRITE_PROFILE",
-      "READ_REPORT"
-    ]
-  },
+    "roles": ["ROLE_USER"],
+    "authorities": ["READ_PROFILE", "WRITE_PROFILE", "READ_REPORT"]
+  }
 ]
