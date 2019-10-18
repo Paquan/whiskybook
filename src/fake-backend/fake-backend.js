@@ -1,15 +1,14 @@
 var dashboardData = require('./dashboard.json');
 var users = require('./users.json');
-// TODO envirioment
-var enviroment = 'FAKE_BACKEND'
 
 export function configureFakeBackend() {
   console.log('configureFakeBackend ...');
   let realFetch = window.fetch;
   window.fetch = function (url, opts) {
     return new Promise((resolve, reject) => {
-      console.log('called: ', url);
-      if (enviroment !== 'FAKE_BACKEND') {
+      console.log('called: ', url,'process.env.RUN_WITH_FAKE_BACKEND:', process.env.RUN_WITH_FAKE_BACKEND);
+      if (process.env.RUN_WITH_FAKE_BACKEND === false) {
+        console.log('do nothings');
         realFetch(url, opts).then(response => resolve(response));
         return;
       }
@@ -19,6 +18,7 @@ export function configureFakeBackend() {
          return;
       }
       if (url.endsWith('/api/dashboard') && opts.method === 'GET') {
+        console.log('getDashboardData');
         getDashboardData(resolve);
         return;
       }

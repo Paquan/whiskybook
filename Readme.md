@@ -23,5 +23,8 @@ Things you need on your computer:
 
 Start your browser at: http://localhost:1234
   
+## Fake-Backend
 
+If you want to work with real backend, please set the file .env.local:
+RUN_WITH_FAKE_BACKEND=false
 
