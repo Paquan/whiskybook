@@ -7,7 +7,7 @@ FROM node:lts
 
 # Avoid warnings by switching to noninteractive
 ENV DEBIAN_FRONTEND=noninteractive
-
+ENV CHOKIDAR_USEPOLLING=1
 # The node image comes with a base non-root 'node' user which this Dockerfile
 # gives sudo access. However, for Linux, this user's GID/UID must match your local
 # user UID/GID to avoid permission issues with bind mounts. Update USER_UID / USER_GID
@@ -47,7 +47,9 @@ RUN apt-get update \
     # Clean up
     && apt-get autoremove -y \
     && apt-get clean -y \
-    && rm -rf /var/lib/apt/lists/*
+    && rm -rf /var/lib/apt/lists/* \
+    # Add Parcel
+    && npm install -g parcel
 
 # Switch back to dialog for any ad-hoc use of apt-get
 ENV DEBIAN_FRONTEND=
