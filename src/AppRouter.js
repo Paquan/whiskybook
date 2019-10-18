@@ -1,6 +1,6 @@
 import React from 'react';
 import {HashRouter as Router, Redirect, Route, Switch,} from 'react-router-dom';
-import Dashboard from './Dashboard/Dashboard';
+import Dashboard from './containers/Dashboard';
 
 export default class AppRouter extends React.Component {
   render() {

@@ -1,0 +1,83 @@
+[
+  {
+    "id": 1,
+    "username": "test",
+    "password": "test",
+    "firstName": "Test",
+    "lastName": "User",
+    "roles": [
+      "ROLE_COACH",
+      "ROLE_USER"
+    ],
+    "authorities": [
+      "WRITE_PROFILE",
+      "READ_DASHBOARD",
+      "READ_PLAYER",
+      "WRITE_LOCATION",
+      "READ_PROFILE",
+      "WRITE_PLAYER",
+      "READ_LOCATION",
+      "READ_EVENT",
+      "READ_COACHS_ON_DASHBOARD",
+      "WRITE_EVENT"
+    ]
+  },
+  {
+    "id": 2,
+    "username": "player",
+    "password": "player",
+    "firstName": "Player",
+    "lastName": "Player",
+    "roles": [
+      "ROLE_PLAYER",
+      "ROLE_USER"
+    ],
+    "authorities": [
+      "READ_PROFILE",
+      "WRITE_PROFILE",
+      "READ_DASHBOARD",
+      "READ_PLAYER"
+    ]
+  },
+  {
+    "id": 3,
+    "username": "onlydashboard",
+    "password": "onlydashboard",
+    "firstName": "onlydashboard",
+    "lastName": "onlydashboard",
+    "roles": [
+      "ROLE_PLAYER",
+      "ROLE_USER"
+    ],
+    "authorities": [
+      "READ_DASHBOARD",
+      "READ_PLAYER"
+    ]
+  },
+  {
+    "id": 4,
+    "username": "admin",
+    "password": "admin",
+    "firstName": "admin",
+    "lastName": "User",
+    "roles": [
+      "ROLE_ADMIN",
+      "ROLE_USER"
+    ],
+    "authorities": [
+      "WRITE_PROFILE",
+      "READ_ORGANISATION",
+      "WRITE_ORGANISATION",
+      "READ_DASHBOARD",
+      "READ_PLAYER",
+      "WRITE_LOCATION",
+      "READ_PROFILE",
+      "WRITE_PLAYER",
+      "READ_LOCATION",
+      "READ_EVENT",
+      "READ_COACHS_ON_DASHBOARD",
+      "WRITE_EVENT"
+    ]
+  }
+
+]
