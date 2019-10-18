@@ -12,11 +12,11 @@ You will need the following tool installed an setted up on your computer
 - ssh
 
 ```
-    git clone git@github.com:Paquan/whiskybook.git
-    cd whiskybook
+git clone git@github.com:Paquan/whiskybook.git
+cd whiskybook
 
-    npm install
-    npm start
+npm install
+npm start
 ```
 
 ### Using Docker in VS Code
@@ -30,7 +30,7 @@ Start your browser at: http://localhost:1234
 If you want to work with real backend:
 
 ```
-    npm start --env=local-real-backend
+npm start --env=local-real-backend
 ```
 
 ## Versioning
