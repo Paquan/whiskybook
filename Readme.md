@@ -22,12 +22,12 @@ You will need the following tool installed an setted up on your computer
 
 Start your browser at: http://localhost:1234
 
-### Prerequisites
+## Fake-Backend
 
-What things you need to install the software and how to install them
+If you want to work with real backend:
 
 ```
-Give examples
+    npm start --env=local-real-backend
 ```
 
 ## Versioning
