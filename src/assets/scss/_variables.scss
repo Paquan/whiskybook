@@ -5,7 +5,6 @@
 
 // // Color system
 
-// $white:    #fff !default;
 // $gray-100: #f8f9fa !default;
 // $gray-200: #e9ecef !default;
 // $gray-300: #dee2e6 !default;
@@ -66,8 +65,8 @@
 //   $colors
 // );
 
-// $primary:       $blue !default;
-// $secondary:     $gray-600 !default;
+$primary: #151515 !default;
+$secondary: #bddc5d !default;
 // $success:       $green !default;
 // $info:          $cyan !default;
 // $warning:       $yellow !default;
@@ -101,7 +100,6 @@
 // $yiq-text-dark:             $gray-900 !default;
 // $yiq-text-light:            $white !default;
 
-
 // // Options
 // //
 // // Quickly modify global styling by enabling or disabling optional features.
@@ -119,7 +117,6 @@
 // $enable-responsive-font-sizes:                false !default;
 // $enable-validation-icons:                     true !default;
 // $enable-deprecation-messages:                 true !default;
-
 
 // // Spacing
 // //
@@ -156,14 +153,12 @@
 //   $sizes
 // );
 
-
 // // Body
 // //
 // // Settings for the `<body>` element.
 
-// $body-bg:                   $white !default;
-// $body-color:                $gray-900 !default;
-
+$body-bg: #2f2f2f !default;
+$body-color: #f6f6f6 !default;
 
 // // Links
 // //
@@ -182,7 +177,6 @@
 
 // $paragraph-margin-bottom:   1rem !default;
 
-
 // // Grid breakpoints
 // //
 // // Define the minimum dimensions at which your layout will change,
@@ -199,7 +193,6 @@
 // @include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
 // @include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
-
 // // Grid containers
 // //
 // // Define the maximum width of `.container` for different screen sizes.
@@ -213,14 +206,12 @@
 
 // @include _assert-ascending($container-max-widths, "$container-max-widths");
 
-
 // // Grid columns
 // //
 // // Set the number of columns and specify the width of the gutters.
 
 // $grid-columns:                12 !default;
 // $grid-gutter-width:           30px !default;
-
 
 // // Components
 // //
@@ -270,7 +261,7 @@
 // // Font, line-height, and color for body text, headings, and more.
 
 // // stylelint-disable value-keyword-case
-// $font-family-sans-serif:      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      'Lato', sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 // $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // $font-family-base:            $font-family-sans-serif !default;
 // // stylelint-enable value-keyword-case
@@ -296,7 +287,7 @@
 // $h6-font-size:                $font-size-base !default;
 
 // $headings-margin-bottom:      $spacer / 2 !default;
-// $headings-font-family:        null !default;
+$headings-font-family: 'Cinzel', serif;
 // $headings-font-weight:        500 !default;
 // $headings-line-height:        1.2 !default;
 // $headings-color:              null !default;
@@ -339,7 +330,6 @@
 
 // $hr-margin-y:                 $spacer !default;
 
-
 // // Tables
 // //
 // // Customizes the `.table` component with basic values, each used across all table variations.
@@ -375,7 +365,6 @@
 // $table-bg-level:              -9 !default;
 // $table-border-level:          -6 !default;
 
-
 // // Buttons + Forms
 // //
 // // Shared variables that are reassigned to `$input-` and `$btn-` specific variables.
@@ -401,7 +390,6 @@
 // $input-btn-line-height-lg:    $line-height-lg !default;
 
 // $input-btn-border-width:      $border-width !default;
-
 
 // // Buttons
 // //
@@ -442,7 +430,6 @@
 // $btn-border-radius-sm:        $border-radius-sm !default;
 
 // $btn-transition:              color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out !default;
-
 
 // // Forms
 
@@ -641,7 +628,6 @@
 //   en: "Browse"
 // ) !default;
 
-
 // // Form validation
 
 // $form-feedback-margin-top:          $form-text-margin-top !default;
@@ -683,7 +669,6 @@
 // $zindex-popover:                    1060 !default;
 // $zindex-tooltip:                    1070 !default;
 
-
 // // Navs
 
 // $nav-link-padding-y:                .5rem !default;
@@ -704,7 +689,6 @@
 
 // $nav-divider-color:                 $gray-200 !default;
 // $nav-divider-margin-y:              $spacer / 2 !default;
-
 
 // // Navbar
 
@@ -743,7 +727,6 @@
 // $navbar-dark-brand-color:                 $navbar-dark-active-color !default;
 // $navbar-dark-brand-hover-color:           $navbar-dark-active-color !default;
 
-
 // // Dropdowns
 // //
 // // Dropdown menu container and contents.
@@ -776,7 +759,6 @@
 
 // $dropdown-header-color:             $gray-600 !default;
 
-
 // // Pagination
 
 // $pagination-padding-y:              .5rem !default;
@@ -807,13 +789,11 @@
 // $pagination-disabled-bg:            $white !default;
 // $pagination-disabled-border-color:  $gray-300 !default;
 
-
 // // Jumbotron
 
 // $jumbotron-padding:                 2rem !default;
 // $jumbotron-color:                   null !default;
 // $jumbotron-bg:                      $gray-200 !default;
-
 
 // // Cards
 
@@ -836,7 +816,6 @@
 // $card-columns-count:                3 !default;
 // $card-columns-gap:                  1.25rem !default;
 // $card-columns-margin:               $card-spacer-y !default;
-
 
 // // Tooltips
 
@@ -861,7 +840,6 @@
 // $form-feedback-tooltip-line-height:   $line-height-base !default;
 // $form-feedback-tooltip-opacity:       $tooltip-opacity !default;
 // $form-feedback-tooltip-border-radius: $tooltip-border-radius !default;
-
 
 // // Popovers
 
@@ -888,7 +866,6 @@
 
 // $popover-arrow-outer-color:         fade-in($popover-border-color, .05) !default;
 
-
 // // Toasts
 
 // $toast-max-width:                   350px !default;
@@ -906,7 +883,6 @@
 // $toast-header-background-color:     rgba($white, .85) !default;
 // $toast-header-border-color:         rgba(0, 0, 0, .05) !default;
 
-
 // // Badges
 
 // $badge-font-size:                   75% !default;
@@ -922,7 +898,6 @@
 // // Use a higher than normal value to ensure completely rounded edges when
 // // customizing padding or font-size on labels.
 // $badge-pill-border-radius:          10rem !default;
-
 
 // // Modals
 
@@ -961,7 +936,6 @@
 // $modal-show-transform:              none !default;
 // $modal-transition:                  transform .3s ease-out !default;
 
-
 // // Alerts
 // //
 // // Define alert colors, border radius, and padding.
@@ -977,7 +951,6 @@
 // $alert-border-level:                -9 !default;
 // $alert-color-level:                 6 !default;
 
-
 // // Progress bars
 
 // $progress-height:                   1rem !default;
@@ -989,7 +962,6 @@
 // $progress-bar-bg:                   theme-color("primary") !default;
 // $progress-bar-animation-timing:     1s linear infinite !default;
 // $progress-bar-transition:           width .6s ease !default;
-
 
 // // List group
 
@@ -1016,7 +988,6 @@
 // $list-group-action-active-color:    $body-color !default;
 // $list-group-action-active-bg:       $gray-200 !default;
 
-
 // // Image thumbnails
 
 // $thumbnail-padding:                 .25rem !default;
@@ -1026,12 +997,10 @@
 // $thumbnail-border-radius:           $border-radius !default;
 // $thumbnail-box-shadow:              0 1px 2px rgba($black, .075) !default;
 
-
 // // Figures
 
 // $figure-caption-font-size:          90% !default;
 // $figure-caption-color:              $gray-600 !default;
-
 
 // // Breadcrumbs
 
@@ -1047,7 +1016,6 @@
 // $breadcrumb-divider:                quote("/") !default;
 
 // $breadcrumb-border-radius:          $border-radius !default;
-
 
 // // Carousel
 
@@ -1075,7 +1043,6 @@
 // $carousel-transition-duration:       .6s !default;
 // $carousel-transition:                transform $carousel-transition-duration ease-in-out !default; // Define transform transition first if using multiple transitions (e.g., `transform 2s ease, opacity .5s ease-out`)
 
-
 // // Spinners
 
 // $spinner-width:         2rem !default;
@@ -1086,14 +1053,12 @@
 // $spinner-height-sm:       $spinner-width-sm !default;
 // $spinner-border-width-sm: .2em !default;
 
-
 // // Close
 
 // $close-font-size:                   $font-size-base * 1.5 !default;
 // $close-font-weight:                 $font-weight-bold !default;
 // $close-color:                       $black !default;
 // $close-text-shadow:                 0 1px 0 $white !default;
-
 
 // // Code
 
@@ -1109,13 +1074,11 @@
 // $pre-color:                         $gray-900 !default;
 // $pre-scrollable-max-height:         340px !default;
 
-
 // // Utilities
 
 // $displays: none, inline, inline-block, block, table, table-row, table-cell, flex, inline-flex !default;
 // $overflows: auto, hidden !default;
 // $positions: static, relative, absolute, fixed, sticky !default;
-
 
 // // Printing
 
