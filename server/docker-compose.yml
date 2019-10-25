@@ -1,0 +1,15 @@
+version: "3"
+
+services:
+  database:
+    image: mysql:latest
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    container_name: whiskybook_database
+    environment:
+      MYSQL_USER: whiskybook
+      MYSQL_PASSWORD: changeme
+      MYSQL_DATABASE: whiskybook
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    ports:
+      - 3306:3306

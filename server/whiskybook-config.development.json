@@ -1,0 +1,16 @@
+{
+  "server": {
+    "port": 4321
+  },
+  "jwt": {
+    "expiration": "1d",
+    "secret": "changeme"
+  },
+  "database": {
+    "host": "localhost",
+    "port": 3306,
+    "database": "whiskybook",
+    "user": "whiskybook",
+    "pass": "changeme"
+  }
+}
