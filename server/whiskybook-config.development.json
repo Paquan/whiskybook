@@ -12,5 +12,9 @@
     "database": "whiskybook",
     "user": "whiskybook",
     "pass": "changeme"
+  },
+  "root": {
+    "email": "root@localhost",
+    "pass": "changeme"
   }
 }

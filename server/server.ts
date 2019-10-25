@@ -1,25 +1,37 @@
+import { createConnection } from 'typeorm';
+import bcrypt from 'bcrypt';
+
 import app from './app';
-import { getConfiguration } from './configuration';
 import { getLogger } from './Logger';
-import {createConnection} from "typeorm";
+import { getConfiguration } from './configuration';
+import { User } from './entities/User';
 
 const configuration = getConfiguration();
-const {database} = configuration;
+const { database } = configuration;
 
 const Logger = getLogger();
 
 createConnection({
-  type: "mysql",
+  type: 'mysql',
   host: database.host,
   port: database.port,
   username: database.user,
   password: database.pass,
-  entities: [],
+  database: database.database,
+  entities: ['./entities/**/*.ts'],
   synchronize: true,
-  logging: false
-}).then(async () => {
-  Logger.debug("Established connection to database");
+  logging: false,
+}).then(async connection => {
+  Logger.debug('Established connection to database');
 
+  if (configuration.isFirstStart) {
+    const repo = connection.getRepository(User);
+    const root = new User();
+    root.email = configuration.root.email;
+    root.passwordHash = await bcrypt.hash(configuration.root.pass, 10);
+    await repo.save(root);
+    Logger.info('Created initial root user with provided password');
+  }
 
   app.listen(configuration.server.port, function() {
     Logger.info(

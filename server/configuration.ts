@@ -23,6 +23,7 @@ const loadConfig = () => {
 
 interface Configuration {
   environment: string;
+  isFirstStart: boolean;
   server: {
     port: number;
   };
@@ -37,14 +38,20 @@ interface Configuration {
     user: string;
     pass: string;
   };
+  root: {
+    email: string;
+    pass: string;
+  };
 }
 
 export const getConfiguration = (): Configuration => {
   if (!configFile) {
     loadConfig();
   }
+
   const {
     NODE_ENV,
+    WB_FIRST_START,
     WB_SERVER_PORT,
     WB_JWT_SECRET,
     WB_JWT_EXPIRATION,
@@ -53,9 +60,12 @@ export const getConfiguration = (): Configuration => {
     WB_DB_DATABASE,
     WB_DB_USER,
     WB_DB_PASS,
+    WB_ROOT_EMAIL,
+    WB_ROOT_PASS,
   } = process.env;
-  console.log(configFile);
+
   return {
+    isFirstStart: Boolean(WB_FIRST_START),
     environment: NODE_ENV,
     server: {
       port: Number(WB_SERVER_PORT) || configFile.server.port || 8888,
@@ -70,6 +80,10 @@ export const getConfiguration = (): Configuration => {
       database: WB_DB_DATABASE || configFile.database.database || 'whiskybook',
       user: WB_DB_USER || configFile.database.user || 'root',
       pass: WB_DB_PASS || configFile.database.pass || '',
+    },
+    root: {
+      email: WB_ROOT_EMAIL || configFile.root.email || 'root@localhost',
+      pass: WB_ROOT_PASS || configFile.root.pass || 'changeme',
     },
   };
 };
