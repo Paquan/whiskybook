@@ -4,7 +4,7 @@
   "description": "Whiskybook Backend Application",
   "main": "index.ts",
   "scripts": {
-    "start:server": "NODE_ENV=development WB_FIRST_START=true ts-node server.ts",
+    "start:server": "NODE_ENV=development ts-node server.ts",
     "start:database": "docker-compose up -d",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

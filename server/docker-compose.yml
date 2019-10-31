@@ -1,4 +1,4 @@
-version: "3"
+version: '3'
 
 services:
   database:
@@ -10,6 +10,6 @@ services:
       MYSQL_USER: whiskybook
       MYSQL_PASSWORD: changeme
       MYSQL_DATABASE: whiskybook
-      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+      MYSQL_RANDOM_ROOT_PASSWORD: 'yes'
     ports:
       - 3306:3306
