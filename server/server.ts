@@ -1,10 +1,11 @@
 import { createConnection } from 'typeorm';
-import bcrypt from 'bcrypt';
+import * as bcrypt from 'bcrypt';
 
 import app from './app';
 import { getLogger } from './Logger';
 import { getConfiguration } from './configuration';
 import { User } from './entities/User';
+import { Whisky } from './entities/Whisky';
 
 const configuration = getConfiguration();
 const { database } = configuration;
@@ -25,12 +26,33 @@ createConnection({
   Logger.debug('Established connection to database');
 
   if (configuration.isFirstStart) {
-    const repo = connection.getRepository(User);
+    const userRepo = connection.getRepository(User);
     const root = new User();
     root.email = configuration.root.email;
     root.passwordHash = await bcrypt.hash(configuration.root.pass, 10);
-    await repo.save(root);
+    await userRepo.save(root);
     Logger.info('Created initial root user with provided password');
+
+    const whiskyRepo = connection.getRepository(Whisky);
+    const whiskies: Whisky[] = [
+      {
+        brand: 'Billicher Fusel',
+        age: 0.5,
+      },
+      {
+        brand: 'Relativ angenehmer Rachenfeger',
+        age: 10,
+      },
+      {
+        brand: 'Glengrande Exclusiva',
+        age: 50,
+      },
+    ];
+    const saved = await whiskyRepo.save(whiskies);
+    Logger.debug(
+      'Saved sample whiskies with following ids: ' +
+        saved.map(w => w.id).join(',')
+    );
   }
 
   app.listen(configuration.server.port, function() {

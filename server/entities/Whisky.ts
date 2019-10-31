@@ -1,10 +1,9 @@
-import {Column, Entity, PrimaryGeneratedColumn} from "typeorm";
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class Whisky {
-
   @PrimaryGeneratedColumn()
-  id: string;
+  id?: string;
 
   @Column()
   brand: string;

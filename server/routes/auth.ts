@@ -1,8 +1,8 @@
-import bcrypt from 'bcrypt';
-import express from 'express';
-import jwt from 'jsonwebtoken';
+import * as bcrypt from 'bcrypt';
+import * as express from 'express';
+import * as jwt from 'jsonwebtoken';
 import { getConfiguration } from '../configuration';
-import { getConnection } from 'typeorm';
+import { getRepository } from 'typeorm';
 import { User } from '../entities/User';
 
 const { jwt: jwtConfig } = getConfiguration();
@@ -10,12 +10,13 @@ const { jwt: jwtConfig } = getConfiguration();
 const auth = express.Router();
 
 auth.post('/', async function(req, res) {
+  const repo = getRepository<User>(User);
   const { email, pass } = req.body;
 
-  const repo = getConnection().getRepository<User>(User);
   const user: User = await repo.findOne({ where: { email } });
 
   const passMatch = await bcrypt.compare(pass, user.passwordHash);
+
   if (passMatch) {
     jwt.sign(
       { user },
