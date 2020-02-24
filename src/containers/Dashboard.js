@@ -33,10 +33,34 @@ class Dashboard extends React.Component {
       });
 
     return (
-      <React.Fragment>
+      <main className="home">
         <h1>Dashboard</h1>
         <ul>{items}</ul>
-      </React.Fragment>
+        <button type="button" className="btn">
+          Default
+        </button>
+        <button type="button" className="btn" disabled>
+          Default disabled
+        </button>
+        <button type="button" className="btn btn-primary">
+          Primary
+        </button>
+        <button type="button" className="btn btn-primary" disabled>
+          Primary disabled
+        </button>
+        <button type="button" className="btn btn-secondary">
+          btn-secondary
+        </button>
+        <button type="button" className="btn btn-secondary" disabled>
+          btn-secondary disabled
+        </button>
+        <button type="button" className="btn btn-link">
+          Link
+        </button>
+        <button type="button" className="btn btn-link" disabled>
+          Link disabled
+        </button>
+      </main>
     );
   }
 }

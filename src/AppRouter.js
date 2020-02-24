@@ -12,8 +12,7 @@ export default class AppRouter extends React.Component {
     return (
       <Router>
         <Switch>
-          <Redirect exact from="/" to="/dashboard" />
-          <Route path="/dashboard" exact component={Dashboard} />
+          <Route path="/" exact component={Dashboard} />
         </Switch>
       </Router>
     );
