@@ -19,7 +19,7 @@
     "mysql2": "1.7.0",
     "reflect-metadata": "0.1.13",
     "signale": "1.4.0",
-    "typeorm": "0.2.20",
+    "typeorm": "0.2.25",
     "typescript": "3.6.4",
     "uuid": "3.3.3"
   },
